@@ -11,6 +11,19 @@ import Foundation
 
 struct Constants {
     
+    
+    private static let MAIN = "https://parse.udacity.com"
+    static let SESSION = "https://onthemap-api.udacity.com/v1/session"
+    static let PUBLIC_USER = "https://onthemap-api.udacity.com/v1/users"
+    static let STUDENT_LOCATION = MAIN + "/parse/classes/StudentLocation"
+    
+    enum HTTPMethod: String {
+        case post = "POST"
+        case get = "GET"
+        case put = "PUT"
+        case delete = "DELETE"
+    }
+    
     // MARK: - Commons
     
     struct HTTPHeaderField {
@@ -25,15 +38,6 @@ struct Constants {
     
     // MARK: - Parse API
     
-    struct Parse {
-        static let APIScheme = "https"
-        static let APIHost = "parse.udacity.com"
-        static let APIPath = "/parse"
-    }
-    
-    struct ParseMethods {
-        static let StudentLocation = "/classes/StudentLocation"
-    }
     
     struct ParseJSONResponseKeys {
         static let Results = "results"
@@ -44,6 +48,8 @@ struct Constants {
         static let ApplicationID = "X-Parse-Application-Id"
         static let Where = "where"
         static let Order = "order"
+        static let Limit = "limit"
+        static let Skip = "skip"
     }
     
     struct ParseParametersValues {
@@ -51,26 +57,6 @@ struct Constants {
         static let ApplicationID = "QrX47CA9cyuGewLdsL7o5Eb8iug6Em8ye0dnAbIr"
     }
     
-    
-    // MARK: - Udacity API
-    
-    struct Udacity {
-        static let APIScheme = "https"
-        static let APIHost = "www.udacity.com"
-        static let APIPath = "/api"
-    }
-    
-    struct UdacityMethods {
-        static let Authentication = "/session"
-        static let Users = "/users"
-    }
-    
-    struct UdacityJSONResponseKeys {
-        static let Account = "account"
-        static let Registered = "registered"
-        static let UserKey = "key"
-        static let Session = "session"
-        static let SessionID = "id"
-    }
-    
 }
+
+

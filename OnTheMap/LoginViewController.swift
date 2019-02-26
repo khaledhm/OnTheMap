@@ -23,18 +23,14 @@ class LoginViewController: UIViewController {
     
 
     @IBAction func loginButton(_ sender: Any) {
-        
         guard let email = self.emailTextField.text else{
-            let alert = UIAlertController(title: "Email Cannot Be Empty", message: "Please Enter Your Email", preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            showAlert(title: "Email Cannot Be Empty", message: "Please Enter Your Email")
             return
         }
         
         guard let password = self.passwordTextField.text else{
-            let alert = UIAlertController(title: "Password Cannot Be Empty", message: "Please Enter Your Password", preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            
+            showAlert(title: "Password Cannot Be Empty", message: "Please Enter Your Password")
             return
         }
         
@@ -46,6 +42,17 @@ class LoginViewController: UIViewController {
     
     func varifyUser(_ email: String, _ password: String) {
         
+        APIs.postRequest(username: email, password: password) { (errString) in
+            guard errString == nil else {
+                self.showAlert(title: "Error", message: errString!)
+                return
+            }
+            DispatchQueue.main.async {
+                print("Its successsssssssssssss")
+                self.performSegue(withIdentifier: "showMap", sender: nil)
+            }
+        }
+
     }
     
 
