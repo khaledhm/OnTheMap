@@ -56,6 +56,16 @@ extension UIViewController{
         item.layer.masksToBounds = true
         item.layer.cornerRadius = 5.0
     }
+    
+    func startAnActivityIndicator() -> UIActivityIndicatorView {
+        let ai = UIActivityIndicatorView(style: .gray)
+        self.view.addSubview(ai)
+        self.view.bringSubviewToFront(ai)
+        ai.center = self.view.center
+        ai.hidesWhenStopped = true
+        ai.startAnimating()
+        return ai
+    }
 }
 
 extension UIViewController: UITextFieldDelegate {

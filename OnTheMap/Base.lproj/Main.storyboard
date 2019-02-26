@@ -31,7 +31,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v6T-pD-5Gb">
-                                <rect key="frame" x="43" y="558" width="288" height="24"/>
+                                <rect key="frame" x="43" y="514" width="288" height="30"/>
                                 <color key="backgroundColor" red="0.63288956880569458" green="0.090287677943706512" blue="0.36726683378219604" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -65,9 +65,8 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="v6T-pD-5Gb" firstAttribute="top" secondItem="1HZ-bi-HJ4" secondAttribute="bottom" constant="54" id="1fw-bE-MDI"/>
+                            <constraint firstItem="v6T-pD-5Gb" firstAttribute="top" secondItem="1HZ-bi-HJ4" secondAttribute="bottom" constant="10" id="1fw-bE-MDI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kCw-uC-Hhv" secondAttribute="trailing" constant="88" id="32C-yc-SqL"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="v6T-pD-5Gb" secondAttribute="bottom" constant="85" id="7Qe-pl-KF6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xai-cq-5p4" secondAttribute="trailing" constant="44" id="9hm-NA-T4c"/>
                             <constraint firstItem="Xai-cq-5p4" firstAttribute="top" secondItem="kCw-uC-Hhv" secondAttribute="bottom" constant="42" id="AEV-pF-RYI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1HZ-bi-HJ4" secondAttribute="trailing" constant="44" id="Lf6-hX-ZtK"/>

@@ -75,7 +75,6 @@ class APIs {
         }
         
         var request = URLRequest(url: url)
-        //request.addValue(self.sessionId!, forHTTPHeaderField: "session_id")
         let session = URLSession.shared
         let task = session.dataTask(with: request){ data, response, error in
             var firstName:String?,lastName : String?,nickname:String = ""
@@ -83,8 +82,6 @@ class APIs {
                 let newData = data?.subdata(in: 5 ..< data!.count)
                 if let json = try? JSONSerialization.jsonObject(with: newData!, options: [.allowFragments]),
                     let dict = json as? [String:Any]
-                    //,let user = dict["user"] as? [String:Any]
-                    //,let guardDict = user["guard"] as? [String:Any]
                 {
                     
                     nickname = dict["nickname"] as? String ?? ""
@@ -128,6 +125,7 @@ class APIs {
             }
         }
         task.resume()
+        print("Deletion finished!!!!!!")
     }
     
     

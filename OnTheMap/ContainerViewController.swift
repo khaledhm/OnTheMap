@@ -45,19 +45,23 @@ class ContainerViewController: UIViewController {
                     self.showAlert(title: "Error", message: "err!")
                     return
                 }
+                print("logout tapped!!!!!")
                 self.dismiss(animated: true, completion: nil)
-                
             }
+            
         }))
         
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(alertController,animated: true,completion: nil)
+        
+        
     }
     
     private func loadStudentLocations() {
-        
+        let ai = self.startAnActivityIndicator()
         APIs.Parser.getStudentLocations { (data) in
             
+            ai.stopAnimating()
             guard let data = data else {
                 self.showAlert(title: "Error", message: "No internet connection found")
                 return

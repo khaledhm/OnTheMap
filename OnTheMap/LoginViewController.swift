@@ -41,8 +41,9 @@ class LoginViewController: UIViewController {
     
     
     func varifyUser(_ email: String, _ password: String) {
-        
+        let ai = startAnActivityIndicator()
         APIs.postRequest(username: email, password: password) { (errString) in
+            ai.stopAnimating()
             guard errString == nil else {
                 self.showAlert(title: "Error", message: errString!)
                 return
